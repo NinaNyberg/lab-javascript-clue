@@ -108,11 +108,20 @@ function selectRandom(arr) {
   }
 }
 
-function pickMystery() {}
+function pickMystery() {
+  let mystery = {};
+  mystery.suspect = selectRandom(suspectsArray);
+  mystery.weapon = selectRandom(weaponsArray);
+  mystery.room = selectRandom(roomsArray);
+
+  return mystery;
+}
 
 // ITERATION 3
 
-function revealMystery() {}
+function revealMystery(mystery) {
+  return `${mystery.suspect.firstName} ${mystery.suspect.lastName} killed Mr. Boddy using the ${mystery.weapon.name} in the ${mystery.room.name}!`;
+}
 
 // The following is required to make unit tests work.
 /* Environment setup. Do not modify the below code. */
